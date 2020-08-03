@@ -7,9 +7,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={ryan} className="App-logo" alt="ryan lin"/>
-        <h1>
-          Hi, I'm Ryan Lin. Welcome to my portfolio! Currently still under construction.
-        </h1>
+        <h2>
+          Hi, I'm Ryan Lin. Welcome to my portfolio! Currently under construction.
+        </h2>
 
         <div className="App-contact">
           <a href="https://drive.google.com/file/d/1SGVATAfiGqU2U2RXWRr4-Q-FUJ6g_LoO/view?usp=sharing"> Resume </a> 
