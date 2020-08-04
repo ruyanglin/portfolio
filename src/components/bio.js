@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from '@material-ui/core/Container';
 import ryan from '../images/ryan.jpg';
 
 class Bio extends React.Component {
@@ -9,10 +10,10 @@ class Bio extends React.Component {
     }
     render() {
         return (
-            <header className="App-header">
+            <Container>
                 <img src={ryan} className="App-logo" alt="ryan lin"/>
                 <h2> {this.state.msg} </h2>
-            </header>
+            </Container>
         )
     }
 }
