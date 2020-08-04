@@ -29,7 +29,7 @@ class Skills extends React.Component {
                     <h3>{this.state.skillText}</h3>
                     </Grid>
                     <Grid item xs>
-                        <h4>Cloud:</h4> <p>AWS(S3, DynamoDB, Redshift, Glue), GCP(Firebase)</p> 
+                        <h4>Cloud:</h4> <p>AWS(S3, DynamoDB, Lambda, Redshift, Glue), GCP(Storage, Firebase)</p> 
                     </Grid>
                     <Grid item xs>
                         <h4>Infrastructure:</h4> <p>Jenkins, Kafka, Docker, Kubernetes</p> 
