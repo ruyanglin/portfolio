@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import ryan from '../images/ryan.jpg';
+import Contact from './contact'
 
 class Bio extends React.Component {
 
@@ -13,6 +14,7 @@ class Bio extends React.Component {
             <Container>
                 <img src={ryan} className="App-logo" alt="ryan lin"/>
                 <h2> {this.state.msg} </h2>
+                <Contact/>
             </Container>
         )
     }

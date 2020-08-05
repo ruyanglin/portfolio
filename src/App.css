@@ -31,7 +31,7 @@
 
 .App-contact {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 2vmin);
@@ -40,11 +40,16 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #189cc0;
 }
 
 a {
   text-decoration: none;
+  margin: 4px;
+}
+
+.tl-img {
+  width: 3vmin;
 }
 
 /* @keyframes App-logo-spin {

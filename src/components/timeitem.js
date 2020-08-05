@@ -7,6 +7,8 @@ import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import Paper from '@material-ui/core/Paper';
+
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const classes = makeStyles((theme) => createStyles({
@@ -17,9 +19,6 @@ const classes = makeStyles((theme) => createStyles({
 
 
 class TimeItem extends React.Component {
-    constructor() {
-        super();
-    }
     render() {
         return (
             <TimelineItem>
@@ -34,10 +33,19 @@ class TimeItem extends React.Component {
                 </TimelineSeparator>
                 <TimelineContent style={{"text-align":"center"}}>
                 <Paper elevation={3} className={classes.paper}>
-                    <Typography variant="body1" component="h2" >
-                        <b>{this.props.role}</b>
-                    </Typography>
-                    <Typography variant="subtitle2">{this.props.company}</Typography>
+                    <Grid container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            <Typography variant="body1" component="h2" >
+                                <b>{this.props.role}</b>
+                            </Typography>
+                            <Typography variant="subtitle2">{this.props.company}</Typography>
+                        </Grid>
+                       <Grid item>
+                            <img className="tl-img" src={this.props.img} alt={this.props.alt}/>
+                       </Grid>
+                    </Grid>
+                    
+                    
                 </Paper>
                 </TimelineContent>
             </TimelineItem>
