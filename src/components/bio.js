@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import ryan from '../images/ryan.jpg';
+import ryan from '../images/ryan.png';
 import Contact from './contact'
 
 class Bio extends React.Component {
