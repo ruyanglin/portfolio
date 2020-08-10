@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import spaceinvaders from '../images/spaceinvaders.png';
-import paintlite from '../images/paintlite.png';
+import paintlite from '../images/paintlite2.png';
 import instalite from '../images/instalite.png';
 
 class ProjectTile extends React.Component {
@@ -11,8 +11,10 @@ class ProjectTile extends React.Component {
         return (
             <Grid item >
                 <Container  className='project-tile' >
+                <a href={this.props.href} target="_blank">
                     <img className='thumbnail' src={this.props.src} alt={this.props.alt}/>
-                    <a href={this.props.href}> <h2> {this.props.title} </h2> </a>
+                    <h2> {this.props.title} </h2> 
+                </a>
                 </Container>
             </Grid>
         )
@@ -21,7 +23,7 @@ class ProjectTile extends React.Component {
 
 function Projects() {
     return (
-        <Grid item container justify="space-evenly" alignItems="center">
+        <Grid item container spacing={4} justify="center" alignItems="stretch" style={{width:"100%"}}>
             <Grid item xs={12}>
                 <h2> Projects </h2>
             </Grid>
