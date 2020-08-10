@@ -34,7 +34,7 @@ function Contact() {
   const [props4, set4] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 1, tension: 350, friction: 40 } }))
 
   return (
-    <Grid container justify="space-evenly" alignItems="center" className="App-contact">
+    <Grid container spacing={2} justify="center" alignItems="center" className="App-contact">
       <AnimatedImageTile
         onMouseMove={({ clientX: x, clientY: y }) => set1({ xys: calc(x, y) })}
         onMouseLeave={() => set1({ xys: [0, 0, 1] })}

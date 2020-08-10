@@ -18,7 +18,7 @@ class Experience extends React.Component {
             <Timeline align="alternate" >
                 <h2>{this.state.title}</h2>
                 <TimeItem timePeriod="Dec 2019 - Present" role="Co-Director of Operations" company="Hack The 6ix" dot="primary" img={hts} alt="hack the 6ix logo"/>
-                <TimeItem timePeriod="Sep 2015 - Apr 2020" role="Bachelor's of Computer Science" company="University of Waterloo" dot="grey" img={uw} alt="uwaterloo logo"/>
+                <TimeItem timePeriod="Sep 2015 - Apr 2020" role="Bachelor of Computer Science, Honours, Co-op" company="University of Waterloo" dot="grey" img={uw} alt="uwaterloo logo"/>
                 <TimeItem timePeriod="Sep 2019 - Dec 2019" role="Software Engineering Intern" company="Uber - Money" dot="grey" img={uber} alt="uber logo"/>
                 <TimeItem timePeriod="Jan 2019 - Apr 2019" role="Software Engineering Intern" company="NVIDIA - AIStore" dot="grey" img={nvidia} alt="nvidia logo"/>
                 <TimeItem timePeriod="Jan 2018 - Aug 2018" role="Software Engineering Intern" company="Citco - Data Services" dot="grey" img={citco} alt="citco logo"/>

@@ -23,7 +23,7 @@ class ProjectTile extends React.Component {
 
 function Projects() {
     return (
-        <Grid item container spacing={4} justify="center" alignItems="stretch" style={{width:"100%"}}>
+        <Grid item container spacing={4} justify="center" alignItems="stretch" style={{width:"100%", margin:"0px"}}>
             <Grid item xs={12}>
                 <h2> Projects </h2>
             </Grid>
