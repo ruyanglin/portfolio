@@ -23,7 +23,7 @@ class ImageTile extends React.Component {
 
 const AnimatedImageTile = animated(ImageTile);
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 200, (x - window.innerWidth / 2) / 200, 1.1]
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 200, (x - window.innerWidth / 2) / 200, 1.05]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 function Contact() {
