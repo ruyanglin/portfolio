@@ -90,6 +90,20 @@ a:link {
   cursor: pointer;
 }
 
+
+.modal {
+  margin: 40vmin auto;
+  align-content: center;
+  justify-content: center;
+  background: white;
+  text-align: center;
+  width: 60vmin;
+}
+
+.modal:hover {
+  transition-delay:1s;
+}
+
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

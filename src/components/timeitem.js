@@ -20,6 +20,7 @@ const classes = makeStyles((theme) => createStyles({
   },
   modal: {
     display: 'flex',
+    width: '40vmin',
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center'
@@ -29,8 +30,9 @@ const classes = makeStyles((theme) => createStyles({
 const Fade = React.forwardRef(function Fade(props, ref) {
     const { in: open, children, onEnter, onExited, ...other } = props;
     const style = useSpring({
-      from: { opacity: 0 },
+      from: { opacity: 0},
       to: { opacity: open ? 1 : 0 },
+     
       onStart: () => {
         if (open && onEnter) {
           onEnter();
@@ -54,36 +56,26 @@ const Fade = React.forwardRef(function Fade(props, ref) {
 class TimeItem extends React.Component {
     constructor(props) {
         super(props);
-        this.handleMouseHover = this.handleMouseHover.bind(this);
+        this.handleMouseHoverEnter = this.handleMouseHoverEnter.bind(this);
+        this.handleMouseHoverExit = this.handleMouseHoverExit.bind(this);
         this.state = {
             isHovering: false,
         };
     }
 
-    handleMouseHover() {
-        this.setState(this.toggleHoverState);
+    handleMouseHoverEnter() {
+      setTimeout(() => {
+        this.setState({isHovering: true});
+      }, 1000);
     }
 
-    toggleHoverState(state) {
-        return {
-            isHovering: !state.isHovering,
-        };
+    handleMouseHoverExit() {
+      this.setState({isHovering: false});
     }
-
-    handleOpen() {
-        this.setState(this.toggleHoverState);
-    };
     
-    handleClose() {
-        this.setState(this.toggleHoverState);
-    };
-    
-
     render() {
         return (
-            <TimelineItem 
-            onMouseEnter={this.handleMouseHover}
-            onMouseLeave={this.handleMouseHover}>
+            <TimelineItem >
 
                 {/* Timeline item*/}
                 <TimelineOppositeContent>
@@ -95,7 +87,9 @@ class TimeItem extends React.Component {
                 <TimelineDot color={this.props.dot}/>
                 <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent style={{"text-align":"center"}}>
+                <TimelineContent style={{"text-align":"center"}} 
+                  onMouseEnter={this.handleMouseHoverEnter}
+                  onMouseLeave={this.handleMouseHoverExit}>
                     <Paper elevation={3} className={classes.paper}>
                         <Grid container direction="row" justify="space-evenly" alignItems="center">
                             <Grid item>
@@ -107,26 +101,29 @@ class TimeItem extends React.Component {
                             <Grid item>
                                     <img className="tl-img" src={this.props.img} alt={this.props.alt}/>
                             </Grid>
-                        </Grid> 
+                            
+                        </Grid>
+
+                        
                     </Paper>
+
+
+                   {/* Modal */}
+                   {this.state.isHovering && <Modal
+                            className={classes.modal}
+                            open={this.handleMouseHoverEnter}
+                            onClose={this.handleMouseHoverExit}
+                            closeAfterTransition >
+                            
+                            <Fade in={this.handleMouseHoverEnter} className="modal">
+                                <h2 id="spring-modal-title">{this.props.role} @ {this.props.company}</h2>
+                                <p id="spring-modal-description">What I did there...</p>
+                            </Fade>
+                            
+                        </Modal>}
                 </TimelineContent>
 
-                {/* Modal */}
-                {this.state.isHovering && <Modal
-                    aria-labelledby="spring-modal-title"
-                    aria-describedby="spring-modal-description"
-                    className={classes.modal}
-                    open={this.handleMouseHover}
-                    onClose={this.handleMouseHover}
-                    closeAfterTransition
-                >
-                    
-                     <div style={{background:"white"}}>
-                        <h2 id="spring-modal-title">Spring modal</h2>
-                        <p id="spring-modal-description">react-spring animates me.</p>
-                    </div>
-                    
-                </Modal>}
+                
             </TimelineItem>
         )
     }
