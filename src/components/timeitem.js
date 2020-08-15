@@ -61,15 +61,18 @@ class TimeItem extends React.Component {
         this.state = {
             isHovering: false,
         };
+        this.timer = null;
     }
 
     handleMouseHoverEnter() {
-      setTimeout(() => {
+      this.timer = setTimeout(() => {
         this.setState({isHovering: true});
       }, 1000);
+      
     }
 
     handleMouseHoverExit() {
+      clearTimeout(this.timer);
       this.setState({isHovering: false});
     }
     
@@ -87,10 +90,11 @@ class TimeItem extends React.Component {
                 <TimelineDot color={this.props.dot}/>
                 <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent style={{"text-align":"center"}} 
+                <TimelineContent style={{"text-align":"center", "cursor":"pointer"}} 
                   onMouseEnter={this.handleMouseHoverEnter}
-                  onMouseLeave={this.handleMouseHoverExit}>
-                    <Paper elevation={3} className={classes.paper}>
+                  onMouseLeave={this.handleMouseHoverExit}
+                 >
+                    <Paper elevation={3} className={classes.paper} >
                         <Grid container direction="row" justify="space-evenly" alignItems="center">
                             <Grid item>
                                 <Typography variant="body1" component="h2" >
