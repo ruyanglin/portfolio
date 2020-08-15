@@ -8,9 +8,8 @@ import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import Paper from '@material-ui/core/Paper';
-
-import Backdrop from '@material-ui/core/Backdrop';
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 import Modal from '@material-ui/core/Modal';
 import Typography from '@material-ui/core/Typography';
 
@@ -120,8 +119,15 @@ class TimeItem extends React.Component {
                             closeAfterTransition >
                             
                             <Fade in={this.handleMouseHoverEnter} className="modal">
-                                <h2 id="spring-modal-title">{this.props.role} @ {this.props.company}</h2>
-                                <p id="spring-modal-description">What I did there...</p>
+                                <Container>
+
+                                  <h2 id="spring-modal-title">{this.props.role} @ {this.props.company}</h2>
+                                  <ul>
+                                    {this.props.text.map(item => {
+                                      return <li>{item}</li>;
+                                    })}
+                                  </ul>
+                                </Container>
                             </Fade>
                             
                         </Modal>}
